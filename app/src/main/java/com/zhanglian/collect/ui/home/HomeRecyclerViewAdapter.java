@@ -25,12 +25,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         View dataView;
         ImageView dataImage;
         TextView dataName;
+        int dataStatus;
+        TextView dataTime;
 
         public ViewHolder(View view) {
             super(view);
             dataView = view;
             dataImage = view.findViewById(R.id.tv_icon);
             dataName = view.findViewById(R.id.tv_title);
+            dataTime = view.findViewById(R.id.tv_time);
         }
     }
 
@@ -62,8 +65,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         HomeData item = mFruitList.get(position);
-        holder.dataImage.setImageResource(item.getImageId());
+
+        if(item.getStatus() == 0){
+            holder.dataImage.setImageResource(R.drawable.status0);
+        } else{
+            holder.dataImage.setImageResource(R.drawable.status1);
+        }
+
         holder.dataName.setText(item.getName());
+        holder.dataTime.setText(item.getTime());
     }
 
     @Override

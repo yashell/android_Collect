@@ -55,9 +55,9 @@ public class HomeFragment extends Fragment {
     }
     private void initData() {
         for(int i = 0; i < 10; i++) {
-            HomeData apple = new HomeData("Apple"+i, R.drawable.titlebg);
+            HomeData apple = new HomeData("电动车行业门店采集", R.drawable.titlebg,0,"2020-05-21 19:51:02");
             dataList.add(apple);
-            HomeData banana = new HomeData("banana"+ i,  R.drawable.titlebg);
+            HomeData banana = new HomeData("banana"+ i,  R.drawable.titlebg,1,"2020-05-21 19:51:02");
             dataList.add(banana);
         }
     }
