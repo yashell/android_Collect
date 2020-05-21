@@ -4,8 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/myAppTheme"
-    android:paddingTop="?attr/actionBarSize">
+    android:theme="@style/AppTheme">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -14,11 +13,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="@color/colorNavBg"
+        app:itemIconTint="@drawable/nav_choose_color"
+        app:itemTextColor="@drawable/nav_choose_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:itemIconTint="@drawable/nav_choose_color"
-        app:itemTextColor="@drawable/nav_choose_color"
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment

@@ -8,14 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="myAppTheme" parent="android:Theme">
-        <item name="android:windowTitleBackgroundStyle">@style/StatusBarBackground </item>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
+
+    <!--    <style name="myAppTheme" parent="android:Theme">-->
+    <!--        <item name="android:windowTitleBackgroundStyle">@style/StatusBarBackground </item>-->
+    <!--    </style>-->
     <!-- 自定义标题样式 -->
      
-    <style name="StatusBarBackground">
-        <item name="android:background">@drawable/home
-        </item>
-    </style>
+    <!--    <style name="StatusBarBackground">-->
+    <!--        <item name="android:background">@drawable/home-->
+    <!--        </item>-->
+    <!--    </style>-->
+
 
 </resources>
