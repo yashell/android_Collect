@@ -1,6 +1,7 @@
 package com.zhanglian.collect.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +13,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.zhanglian.collect.MainActivity;
 import com.zhanglian.collect.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 
 public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> {
-    private List<HomeData> mFruitList;
+    private List<HomeData> dataList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         View dataView;
@@ -47,7 +51,10 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                HomeData fruit = mFruitList.get(position);
+                HomeData fruit = dataList.get(position);
+                Intent intent = new Intent(view.getContext(),HomeList.class);
+                view.getContext().startActivity(intent);
+
                 Toast.makeText(view.getContext(), "你点击了View"+ fruit.getName(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -55,7 +62,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                HomeData fruit = mFruitList.get(position);
+                HomeData fruit = dataList.get(position);
                 Toast.makeText(view.getContext(), "你点击了图片"+ fruit.getName(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -64,7 +71,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HomeData item = mFruitList.get(position);
+        HomeData item = dataList.get(position);
 
         if(item.getStatus() == 0){
             holder.dataImage.setImageResource(R.drawable.status0);
@@ -78,11 +85,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
 
     @Override
     public int getItemCount() {
-        return mFruitList.size();
+        return dataList.size();
     }
 
-    public HomeRecyclerViewAdapter(List<HomeData> fruitList) {
-        mFruitList = fruitList;
+    public HomeRecyclerViewAdapter(List<HomeData> mdataList) {
+        dataList = mdataList;
     }
 
 

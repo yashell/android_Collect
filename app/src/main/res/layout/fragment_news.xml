@@ -13,7 +13,6 @@
         android:layout_height="92dp"
         android:background="@drawable/titlebg"
         tools:ignore="MissingConstraints">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

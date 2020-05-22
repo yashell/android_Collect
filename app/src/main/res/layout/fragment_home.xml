@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
+        android:layout_height="@dimen/title_height"
         android:background="@drawable/titlebg"
         tools:ignore="MissingConstraints">
 

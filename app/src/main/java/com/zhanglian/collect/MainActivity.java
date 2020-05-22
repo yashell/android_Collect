@@ -1,10 +1,13 @@
 package com.zhanglian.collect;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.zhanglian.collect.ui.home.HomeList;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,5 +38,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void goHomeList(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, HomeList.class);
+        intent.putExtra("parameterA","主页面传过来的数据");
+        intent.putExtra("parameterB",1231);
+        startActivity(intent);
+    }
+
 
 }
