@@ -46,8 +46,6 @@ public class HomeDetails extends AppCompatActivity {
     }
 
     public void goBackHomeList(View view){
-        Intent intent = new Intent(this, HomeList.class);
-        view.getContext().startActivity(intent);
         finish();
     }
 }

@@ -52,17 +52,19 @@ public class HomeList extends AppCompatActivity {
     }
 
     public void goback(View view){
-        Intent intent = new Intent(this,MainActivity.class);
-        view.getContext().startActivity(intent);
-        finish();
+        HomeList.this.finish();
+    }
+    public void goHomeAdd(View view){
+        Intent intent = new Intent(view.getContext(), HomeAdd.class);
+        startActivity(intent);
     }
 
     private void initData() {
         HomeListData data0 = new HomeListData("雅迪电动车专卖店", "云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
         dataList.add(data0);
-        HomeListData data1 = new HomeListData("小牛电动车专卖店",  "云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
+        HomeListData data1 = new HomeListData("小牛电动车专卖店",  "云南省昆明市盘龙区北京路412号","2020-05-21 19:51:02");
         dataList.add(data1);
-        HomeListData data2 = new HomeListData("新日电动车专卖店",  "云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
+        HomeListData data2 = new HomeListData("新日电动车专卖店",  "云南省昆明市盘龙区北京路413号","2020-05-21 19:51:02");
         dataList.add(data2);
     }
 }

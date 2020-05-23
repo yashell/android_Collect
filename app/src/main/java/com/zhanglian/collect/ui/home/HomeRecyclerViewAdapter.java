@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.zhanglian.collect.MainActivity;
 import com.zhanglian.collect.R;
+import com.zhanglian.collect.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,21 +52,14 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                HomeData fruit = dataList.get(position);
-                Intent intent = new Intent(view.getContext(),HomeList.class);
-                view.getContext().startActivity(intent);
+                HomeData data = dataList.get(position); // data 为当前数据
+                if (Utils.isFastClick()) {
+                    Intent intent = new Intent(view.getContext(),HomeList.class);
+                    view.getContext().startActivity(intent);
+                }
+            }
+        });
 
-                Toast.makeText(view.getContext(), "你点击了View"+ fruit.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        holder.dataImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int position = holder.getAdapterPosition();
-                HomeData fruit = dataList.get(position);
-                Toast.makeText(view.getContext(), "你点击了图片"+ fruit.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
         return holder;
     }
 

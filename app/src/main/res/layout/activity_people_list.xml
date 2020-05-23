@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.PeopleList">
+    tools:context=".ui.home.PeopleList"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -43,6 +44,22 @@
             android:text="人员列表"
             android:textColor="@color/titleTextColor" />
 
-    </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingTop="20dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:textSize="@dimen/font_title"
+            android:text="添加"
+            android:onClick="goPeopleAdd"
+            android:textColor="@color/titleTextColor" />
 
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/People_list_recycler_view"
+        android:layout_width="match_parent"
+        android:background="@color/ColorBg"
+        android:layout_weight="1"
+        android:layout_height="match_parent"/>
 </LinearLayout>

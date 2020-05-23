@@ -31,10 +31,6 @@ public class NewsList extends AppCompatActivity {
         int data2= intent.getIntExtra("parameterB",-1);
     }
     public void goback(View view){
-        Log.d("fsd", "goBack: ");
-        Intent intent = new Intent(this, MainActivity.class);
-        view.getContext().startActivity(intent);
-////        HomeList.this.finish();
         finish();
     }
 }

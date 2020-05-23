@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zhanglian.collect.R;
 import com.zhanglian.collect.Utils.Utils;
@@ -17,21 +15,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class HomeListRecyclerViewAdapter extends RecyclerView.Adapter<HomeListRecyclerViewAdapter.ViewHolder> {
-    private List<HomeListData> dataList;
+public class PeopleListRecyclerViewAdapter extends RecyclerView.Adapter<PeopleListRecyclerViewAdapter.ViewHolder> {
+    private List<PeopleListData> dataList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         View dataView;
         TextView dataName;
-        TextView dataAdd;
-        TextView dataTime;
+        TextView dataId;
+        TextView dataPhone;
 
         public ViewHolder(View view) {
             super(view);
             dataView = view;
             dataName = view.findViewById(R.id.tv_title);
-            dataAdd = view.findViewById(R.id.tv_add);
-            dataTime = view.findViewById(R.id.tv_time);
+            dataId = view.findViewById(R.id.tv_add);
+            dataPhone = view.findViewById(R.id.tv_time);
         }
     }
 
@@ -39,15 +37,15 @@ public class HomeListRecyclerViewAdapter extends RecyclerView.Adapter<HomeListRe
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.home_list_item_recyclerview, parent, false);
+                .inflate(R.layout.people_list_item_recyclerview, parent, false);
         final ViewHolder holder = new ViewHolder(view);
         holder.dataView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                HomeListData data = dataList.get(position);
+                PeopleListData data = dataList.get(position);
                 if (Utils.isFastClick()) {
-                    Intent intent = new Intent(view.getContext(), HomeDetails.class);
+                    Intent intent = new Intent(view.getContext(), PeopleAdd.class);
                     view.getContext().startActivity(intent);
                 }
             }
@@ -57,12 +55,12 @@ public class HomeListRecyclerViewAdapter extends RecyclerView.Adapter<HomeListRe
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HomeListData item = dataList.get(position);
+        PeopleListData item = dataList.get(position);
         String aa= item.getName();
 
         holder.dataName.setText(item.getName());
-        holder.dataAdd.setText(item.getAdd());
-        holder.dataTime.setText(item.getTime());
+        holder.dataId.setText(item.getId());
+        holder.dataPhone.setText(item.getPhone());
 
     }
 
@@ -71,7 +69,7 @@ public class HomeListRecyclerViewAdapter extends RecyclerView.Adapter<HomeListRe
         return dataList.size();
     }
 
-    public HomeListRecyclerViewAdapter(List<HomeListData> mdataList) {
+    public PeopleListRecyclerViewAdapter(List<PeopleListData> mdataList) {
         dataList = mdataList;
     }
 

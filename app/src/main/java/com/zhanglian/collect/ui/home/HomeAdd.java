@@ -11,12 +11,12 @@ import android.view.WindowManager;
 
 import com.zhanglian.collect.R;
 
-public class PeopleAdd extends AppCompatActivity {
+public class HomeAdd extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people_add);
+        setContentView(R.layout.activity_home_add);
         //系统标题栏隐藏
         ActionBar actionbar=getSupportActionBar();
         if(actionbar!=null) actionbar.hide();
@@ -25,14 +25,15 @@ public class PeopleAdd extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
-
-    public void goBackPeopleList(View view){
+    public void goBackHomeDetails2(View view){
         finish();
     }
-
-    public void sure(View view){
-//        Intent intent = new Intent(this, PeopleList.class);
-//        view.getContext().startActivity(intent);
+    public void homeSure(View view){
         finish();
+    }
+    public void goAct(View view){
+        Intent intent = new Intent();
+        intent.setClass(this,PeopleAdd.class);
+        startActivity(intent);
     }
 }

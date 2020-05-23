@@ -11,47 +11,45 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:textSize="@dimen/font_List_title"
+            android:textColor="@color/ColorListTitle"
+            android:text="content" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:layout_marginLeft="10dp"
             >
-
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:textSize="@dimen/font_List_title"
-                android:textColor="@color/ColorListTitle"
-                android:text="content" />
-
             <TextView
                 android:id="@+id/tv_add"
-                android:layout_marginLeft="20dp"
-                android:textSize="@dimen/font_List_task"
-                android:textColor="@color/ColorListTask"
+                android:textSize="@dimen/font_List_time"
+                android:textColor="@color/ColorListTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
             <TextView
                 android:id="@+id/tv_time"
-                android:layout_marginLeft="20dp"
                 android:textSize="@dimen/font_List_time"
                 android:textColor="@color/ColorListTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
         </LinearLayout>
-
         <ImageView
-            android:layout_width="60dp"
+            android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/next"
             android:scaleType="fitStart"
-         />
+            />
+
     </LinearLayout>
 
 </RelativeLayout>

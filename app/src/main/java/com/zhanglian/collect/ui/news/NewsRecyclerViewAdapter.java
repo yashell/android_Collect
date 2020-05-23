@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhanglian.collect.R;
+import com.zhanglian.collect.Utils.Utils;
 import com.zhanglian.collect.ui.home.HomeData;
 import com.zhanglian.collect.ui.home.HomeList;
 
@@ -54,10 +55,11 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 NewsData fruit = dataList.get(position);
-                Intent intent = new Intent(view.getContext(),NewsList.class);
-                view.getContext().startActivity(intent);
-
-                Toast.makeText(view.getContext(), "你点击了View"+ fruit.getName(), Toast.LENGTH_SHORT).show();
+                // 原型预警的列表是任务的，虽然我写了NewsList,但这里还是跳转HomeList
+                if (Utils.isFastClick()) {
+                    Intent intent = new Intent(view.getContext(), HomeList.class);
+                    view.getContext().startActivity(intent);
+                }
             }
         });
         holder.dataImage.setOnClickListener(new View.OnClickListener() {

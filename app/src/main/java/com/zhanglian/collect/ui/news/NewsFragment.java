@@ -2,6 +2,7 @@ package com.zhanglian.collect.ui.news;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,23 @@ public class NewsFragment extends Fragment {
 
         return root;
     }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("刷新数据1", "onResume: ");
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        // TODO Auto-generated method stub
+        super.onHiddenChanged(hidden);
+        if (root != null && !hidden) {
+            Log.d("刷新数据2", "onResume: ");
+        }
+    }
+
     private void initData() {
         for(int i = 0; i < 10; i++) {
             NewsData dataA = new NewsData("孙阳",0,"533001199001120390","电动车行业门店采集","云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");

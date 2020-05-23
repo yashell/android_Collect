@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Collect</string>
+    <string name="app_name">万能采集</string>
     <string name="title_home">任务区</string>
     <string name="title_news">消息预警</string>
     <string name="title_user">个人中心</string>
