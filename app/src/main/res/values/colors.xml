@@ -4,11 +4,15 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorNavBg">#037cdc</color>
-    <color name="navActive">#fffee7</color>
+    <color name="navActive">#ffffff</color>
     <color name="navNoActive">#7cc3fc</color>
-    <color name="titleColor">#03DAC5</color>
+    <color name="titleColor">#e3e3e3</color>
+    <color name="titleTextColor">#080808</color>
     <color name="ColorWrite">#ffffff</color>
-    <color name="ColorBg">#fffff8</color>
+    <color name="ColorBg">#ffffff</color>
     <color name="ColorListTitle">#4d4d4d</color>
     <color name="ColorListTime">#919191</color>
+    <color name="ColorListTask">#696969</color>
+    <color name="leftTextColor">#333333</color>
+    <color name="rightTextColor">#747474</color>
 </resources>

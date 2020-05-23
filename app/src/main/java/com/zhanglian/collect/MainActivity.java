@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-        //系统标题栏隐藏  因为后边要加侧滑菜单
+        //系统标题栏隐藏
         ActionBar actionbar=getSupportActionBar();
         if(actionbar!=null) actionbar.hide();
         //getWindow().addFlags(WindowManager.LayoutParams.ALPHA_CHANGED);//隐藏状态栏

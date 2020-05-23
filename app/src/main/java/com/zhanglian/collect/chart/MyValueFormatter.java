@@ -10,7 +10,7 @@ public class MyValueFormatter extends ValueFormatter {
     private String suffix;
 
     public MyValueFormatter(String suffix) {
-        mFormat = new DecimalFormat("0000");
+        mFormat = new DecimalFormat(" "); // 此处设置X轴
         this.suffix = suffix;
     }
 

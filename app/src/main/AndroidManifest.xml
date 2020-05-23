@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.HomeList"></activity>
+        <activity android:name=".ui.home.PeopleAdd"></activity>
+        <activity android:name=".ui.home.PeopleList" />
+        <activity android:name=".ui.home.HomeDetails" />
+        <activity android:name=".ui.home.Store" />
+        <activity android:name=".ui.news.NewsList" />
+        <activity
+            android:name=".ui.home.HomeList"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

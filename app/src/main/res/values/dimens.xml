@@ -5,6 +5,12 @@
     <dimen name="font_title">20sp</dimen>
     <dimen name="font_List_title">18sp</dimen>
     <dimen name="font_List_time">11sp</dimen>
+    <dimen name="font_List_task">12sp</dimen>
     <dimen name="font_List_tip">11sp</dimen>
     <dimen name="title_height">76dp</dimen>
+    <dimen name="user_num">18sp</dimen>
+    <dimen name="user_total_title">14sp</dimen>
+    <dimen name="left_width">100dp</dimen>
+    <dimen name="left_size">14sp</dimen>
+    <dimen name="right_size">13sp</dimen>
 </resources>

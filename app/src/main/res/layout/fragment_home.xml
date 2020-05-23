@@ -24,15 +24,31 @@
             android:textSize="@dimen/font_title" />
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/text_home"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp" />
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/ColorBg"
+        >
+        <EditText
+            android:id="@+id/home_search"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_bg"
+            android:singleLine="true"
+            android:hint="请输入任务名称/采集类型"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"
+            android:textColorHint="#c1dff9"
+            android:layout_marginHorizontal="10dp"
+            android:layout_margin="10dp"
+            android:drawableRight="@drawable/next"
+
+            />
+
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recycler_view"
         android:layout_width="match_parent"

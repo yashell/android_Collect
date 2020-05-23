@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/recycler_item_selector"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:textSize="@dimen/font_List_title"
+                android:textColor="@color/ColorListTitle"
+                android:text="content" />
+
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/font_List_task"
+                android:textColor="@color/ColorListTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/font_List_time"
+                android:textColor="@color/ColorListTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:src="@drawable/next"
+            android:scaleType="fitStart"
+         />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -38,11 +38,11 @@ public class UserFragment extends Fragment {
         userViewModel =
                 ViewModelProviders.of(this).get(UserViewModel.class);
         View root = inflater.inflate(R.layout.fragment_user, container, false);
-        final TextView textView = root.findViewById(R.id.text_user);
+        //final TextView textView = root.findViewById(R.id.text_user);
         userViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+               // textView.setText(s);
             }
         });
         chart = root.findViewById(R.id.myChart);
@@ -106,7 +106,7 @@ public class UserFragment extends Fragment {
         chart.animateXY(600,600);
 
         // 显示图例
-        chart.getLegend().setEnabled(true);
+        chart.getLegend().setEnabled(false);
         Legend legend = chart.getLegend();
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
@@ -122,13 +122,18 @@ public class UserFragment extends Fragment {
 
     public void getData(){
         ArrayList<BarEntry> values = new ArrayList<>();
-        BarEntry barEntry = new BarEntry(Float.valueOf("2015"),Float.valueOf("100"));
-        BarEntry barEntry1 = new BarEntry(Float.valueOf("2016"),Float.valueOf("210"));
-        BarEntry barEntry2 = new BarEntry(Float.valueOf("2017"),Float.valueOf("300"));
-        BarEntry barEntry3 = new BarEntry(Float.valueOf("2018"),Float.valueOf("450"));
-        BarEntry barEntry4 = new BarEntry(Float.valueOf("2019"),Float.valueOf("300"));
-        BarEntry barEntry5 = new BarEntry(Float.valueOf("2020"),Float.valueOf("650"));
-        BarEntry barEntry6 = new BarEntry(Float.valueOf("2021"),Float.valueOf("740"));
+        BarEntry barEntry = new BarEntry(Float.valueOf("1"),Float.valueOf("15"));
+        BarEntry barEntry1 = new BarEntry(Float.valueOf("2"),Float.valueOf("9"));
+        BarEntry barEntry2 = new BarEntry(Float.valueOf("3"),Float.valueOf("17"));
+        BarEntry barEntry3 = new BarEntry(Float.valueOf("4"),Float.valueOf("12"));
+        BarEntry barEntry4 = new BarEntry(Float.valueOf("5"),Float.valueOf("3"));
+        BarEntry barEntry5 = new BarEntry(Float.valueOf("6"),Float.valueOf("13"));
+        BarEntry barEntry6 = new BarEntry(Float.valueOf("7"),Float.valueOf("14"));
+        BarEntry barEntry7 = new BarEntry(Float.valueOf("8"),Float.valueOf("17"));
+        BarEntry barEntry8 = new BarEntry(Float.valueOf("9"),Float.valueOf("12"));
+        BarEntry barEntry9 = new BarEntry(Float.valueOf("10"),Float.valueOf("6"));
+        BarEntry barEntry10 = new BarEntry(Float.valueOf("11"),Float.valueOf("2"));
+        BarEntry barEntry11 = new BarEntry(Float.valueOf("12"),Float.valueOf("10"));
         values.add(barEntry);
         values.add(barEntry1);
         values.add(barEntry2);
@@ -136,6 +141,11 @@ public class UserFragment extends Fragment {
         values.add(barEntry4);
         values.add(barEntry5);
         values.add(barEntry6);
+        values.add(barEntry7);
+        values.add(barEntry8);
+        values.add(barEntry9);
+        values.add(barEntry10);
+        values.add(barEntry11);
         BarDataSet set1;
 
         if (chart.getData() != null &&
@@ -148,7 +158,7 @@ public class UserFragment extends Fragment {
             set1 = new BarDataSet(values, " ");
             //set1.setColors(ColorTemplate.VORDIPLOM_COLORS);
             // 柱状图设置为单一颜色
-            set1.setColors(Color.parseColor("#45a1e2"));
+            set1.setColors(Color.parseColor("#199ed8"));
             set1.setDrawValues(false);
 
             ArrayList<IBarDataSet> dataSets = new ArrayList<>();

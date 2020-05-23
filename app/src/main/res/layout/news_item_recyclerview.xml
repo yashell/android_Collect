@@ -22,7 +22,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="left"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -34,56 +34,44 @@
 
                 <TextView
                     android:id="@+id/tv_title"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-5dp"
                     android:textSize="@dimen/font_List_title"
                     android:textColor="@color/ColorListTitle"
                     android:text="content" />
 
+                <TextView
+                    android:id="@+id/tv_identity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="2dp"
+                    android:textSize="@dimen/font_List_tip"
+                    android:textColor="@color/ColorWrite"
+                    android:background="@drawable/tip_radius4"
+                    />
+
             </LinearLayout>
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/tv_task"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/font_List_task"
+                android:textColor="@color/ColorListTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
-                android:orientation="horizontal"
-                android:layout_marginLeft="13dp"
-                android:padding="10dp">
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:paddingHorizontal="5dp"
-                    android:paddingVertical="0dp"
-                    android:textSize="@dimen/font_List_tip"
-                    android:textColor="@color/ColorWrite"
-                    android:background="@drawable/tip_radius1"
-                    android:text="民警采集" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:paddingHorizontal="5dp"
-                    android:paddingVertical="0dp"
-                    android:textSize="@dimen/font_List_tip"
-                    android:textColor="@color/ColorWrite"
-                    android:background="@drawable/tip_radius2"
-                    android:text="辅警采集" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:paddingHorizontal="5dp"
-                    android:paddingVertical="0dp"
-                    android:textSize="@dimen/font_List_tip"
-                    android:textColor="@color/ColorWrite"
-                    android:background="@drawable/tip_radius3"
-                    android:text="社会采集" />
-
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_marginLeft="20dp"
+                android:textSize="@dimen/font_List_task"
+                android:textColor="@color/ColorListTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_marginLeft="20dp"
