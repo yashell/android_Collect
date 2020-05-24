@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="20dp"
+            android:textStyle="bold"
             android:text="@string/title_news"
             android:textColor="@color/ColorWrite"
             android:textSize="@dimen/font_title" />

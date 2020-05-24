@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.zhanglian.collect.R;
 import com.zhanglian.collect.Utils.Utils;
 import com.zhanglian.collect.ui.home.HomeData;
+import com.zhanglian.collect.ui.home.HomeDetails;
 import com.zhanglian.collect.ui.home.HomeList;
 
 import java.util.List;
@@ -57,7 +58,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
                 NewsData fruit = dataList.get(position);
                 // 原型预警的列表是任务的，虽然我写了NewsList,但这里还是跳转HomeList
                 if (Utils.isFastClick()) {
-                    Intent intent = new Intent(view.getContext(), HomeList.class);
+                    Intent intent = new Intent(view.getContext(), HomeDetails.class);
                     view.getContext().startActivity(intent);
                 }
             }
