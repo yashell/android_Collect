@@ -23,6 +23,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zhanglian.collect.MainActivity;
 import com.zhanglian.collect.R;
 import com.zhanglian.collect.ui.news.NewsViewModel;
@@ -36,6 +39,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerview;
     private List<HomeData> dataList = new ArrayList<>();
     HomeRecyclerViewAdapter adapter;
+    private int dataTotal = 21;
+
     View root;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -73,11 +78,38 @@ public class HomeFragment extends Fragment {
         recyclerview =(RecyclerView) root.findViewById(R.id.home_recycler_view);
         initData();
 
-        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(dataList);
+        adapter = new HomeRecyclerViewAdapter(dataList);
         recyclerview.setAdapter(adapter);
         recyclerview.setLayoutManager(new LinearLayoutManager(root.getContext(),LinearLayoutManager.VERTICAL,false));
         recyclerview.scrollToPosition(0); //默认滚动到哪一条
         recyclerview.addItemDecoration(new DividerItemDecoration(root.getContext(),DividerItemDecoration.VERTICAL));
+
+
+        RefreshLayout refreshLayout = (RefreshLayout)root.findViewById(R.id.refreshLayout);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                dataList.clear();
+                insertData(0);
+                refreshlayout.finishRefresh(1000,true,false);//传入false表示刷新失败
+
+            }
+        });
+        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadMore(1000,true,true);//传入false表示加载失败
+
+                insertData(dataList.size());
+                boolean noMore = dataTotal> dataList.size()?false:true;
+//                refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
+                refreshlayout.finishLoadMore(1000,true,noMore);//传入false表示加载失败
+
+            }
+        });
+
+
 
         return root;
     }
@@ -88,6 +120,16 @@ public class HomeFragment extends Fragment {
             HomeData banana = new HomeData("banana"+ i,  R.drawable.titlebg,1,"2020-05-21 19:51:02");
             dataList.add(banana);
         }
+    }
+
+    public void insertData(int num) {
+        int nu = (num+10) > dataTotal ?  dataTotal :  num+10;
+
+        for (int i=num;i<nu;i++){
+            HomeData apple = new HomeData("电动车行业门店采集"+i, R.drawable.ic_launcher_background,0,"2020-05-21 19:51:02");
+            dataList.add(apple);
+        }
+        //adapter.notifyItemChanged(dataList.size() - nu, dataList.size());//局部刷新
     }
     /**
      * 隐藏软键盘
