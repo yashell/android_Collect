@@ -88,6 +88,13 @@ public class NewsFragment extends Fragment {
             dataList.add(dataA);
             NewsData dataB = new NewsData("王刚"+ i,1,"533001199001120390","电动车行业门店采集","云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
             dataList.add(dataB);
+            NewsData dataC = new NewsData("王刚"+ i,2,"533001199001120390","电动车行业门店采集","云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
+            dataList.add(dataC);
+            NewsData dataD = new NewsData("王刚"+ i,3,"533001199001120390","电动车行业门店采集","云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
+            dataList.add(dataD);
+            NewsData dataE = new NewsData("王刚"+ i,4,"533001199001120390","电动车行业门店采集","云南省昆明市盘龙区北京路411号","2020-05-21 19:51:02");
+            dataList.add(dataE);
+
         }
     }
 }

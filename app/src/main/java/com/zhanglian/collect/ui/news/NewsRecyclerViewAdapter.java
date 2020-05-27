@@ -88,6 +88,12 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             case 2:
                 holder.dataImage.setImageResource(R.drawable.news_status2);
                 break;
+            case 3:
+                holder.dataImage.setImageResource(R.drawable.news_status3);
+                break;
+            case 4:
+                holder.dataImage.setImageResource(R.drawable.news_status4);
+                break;
         }
 
 
