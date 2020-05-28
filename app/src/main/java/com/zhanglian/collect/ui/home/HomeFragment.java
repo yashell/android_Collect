@@ -38,8 +38,14 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private RecyclerView recyclerview;
     private List<HomeData> dataList = new ArrayList<>();
+    private List<HomeData> historyData = new ArrayList<>();
+
+
+
+
     HomeRecyclerViewAdapter adapter;
     private int dataTotal = 21;
+
 
     View root;
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -114,11 +120,10 @@ public class HomeFragment extends Fragment {
         return root;
     }
     private void initData() {
+        historyData.add(new HomeData("电动车行业门店采集", R.drawable.titlebg,0,"2020-05-21 19:51:02"));
         for(int i = 0; i < 10; i++) {
             HomeData apple = new HomeData("电动车行业门店采集", R.drawable.titlebg,0,"2020-05-21 19:51:02");
             dataList.add(apple);
-            HomeData banana = new HomeData("banana"+ i,  R.drawable.titlebg,1,"2020-05-21 19:51:02");
-            dataList.add(banana);
         }
     }
 
@@ -129,7 +134,7 @@ public class HomeFragment extends Fragment {
             HomeData apple = new HomeData("电动车行业门店采集"+i, R.drawable.ic_launcher_background,0,"2020-05-21 19:51:02");
             dataList.add(apple);
         }
-        //adapter.notifyItemChanged(dataList.size() - nu, dataList.size());//局部刷新
+        adapter.notifyItemChanged(dataList.size() - nu, dataList.size());//局部刷新
     }
     /**
      * 隐藏软键盘
